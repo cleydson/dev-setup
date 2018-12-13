@@ -49,8 +49,8 @@ brew install wget --with-iri
 # Install RingoJS and Narwhal.
 # Note that the order in which these are installed is important;
 # see http://git.io/brew-narwhal-ringo.
-brew install ringojs
-brew install narwhal
+# brew install ringojs
+# brew install narwhal
 
 # Install Python
 brew install python
@@ -67,7 +67,7 @@ brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
-brew install homebrew/php/php55 --with-gmp
+# brew install homebrew/php/php55 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -132,9 +132,13 @@ brew install libxslt
 brew link libxml2 --force
 brew link libxslt --force
 
+
+brew install jq
+brew install youtube-dl
+
 # Install Heroku
-brew install heroku-toolbelt
-heroku update
+# brew install heroku-toolbelt
+# heroku update
 
 # Core casks
 brew cask install --appdir="/Applications" alfred
@@ -150,13 +154,15 @@ brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" macdown
 
 # Misc casks
+brew cask install caffeine
+brew cask install aws-vault
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" evernote
-brew cask install --appdir="/Applications" 1password
+#brew cask install --appdir="/Applications" 1password
 #brew cask install --appdir="/Applications" gimp
 #brew cask install --appdir="/Applications" inkscape
 
@@ -168,7 +174,7 @@ brew install docker
 brew install boot2docker
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+# brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
 # Remove outdated versions from the cellar.
 brew cleanup
