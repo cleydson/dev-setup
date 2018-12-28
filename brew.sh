@@ -132,11 +132,6 @@ brew install libxslt
 brew link libxml2 --force
 brew link libxslt --force
 
-
-brew install jq
-brew install youtube-dl
-brew cask install powershell
-
 # Install Heroku
 # brew install heroku-toolbelt
 # heroku update
@@ -176,6 +171,12 @@ brew install boot2docker
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 # brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+
+brew install npm
+npm install --global alfred-dark-mode
+brew install jq
+brew install youtube-dl
+brew cask install powershell
 
 # Remove outdated versions from the cellar.
 brew cleanup
