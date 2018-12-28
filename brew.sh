@@ -177,6 +177,7 @@ npm install --global alfred-dark-mode
 brew install jq
 brew install youtube-dl
 brew cask install powershell
+brew install fzf
 
 # Remove outdated versions from the cellar.
 brew cleanup
