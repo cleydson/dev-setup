@@ -172,6 +172,7 @@ brew install boot2docker
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 # brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
+brew install zsh zsh-completions
 brew install fzf
 brew install tmux
 brew install npm
@@ -179,6 +180,9 @@ npm install --global alfred-dark-mode
 brew install jq
 brew install youtube-dl
 brew cask install powershell
+
+# Install oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # Remove outdated versions from the cellar.
 brew cleanup
