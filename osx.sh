@@ -28,17 +28,17 @@ sudo nvram SystemAudioVolume=" "
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Menu bar: hide the Time Machine, Volume, and User icons
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-    defaults write "${domain}" dontAutoLoad -array \
-        "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-        "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-        "/System/Library/CoreServices/Menu Extras/User.menu"
-done
-defaults write com.apple.systemuiserver menuExtras -array \
-    "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-    "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-    "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-    "/System/Library/CoreServices/Menu Extras/Clock.menu"
+# for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+#     defaults write "${domain}" dontAutoLoad -array \
+#         "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+#         "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+#         "/System/Library/CoreServices/Menu Extras/User.menu"
+# done
+# defaults write com.apple.systemuiserver menuExtras -array \
+#     "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+#     "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+#     "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+#     "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Set highlight color to green
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
@@ -118,7 +118,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 # Disable smart quotes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 # defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
@@ -215,8 +215,9 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 #defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 # Save screenshots to the Desktop/Screenshots
-mkdir ${HOME}/Desktop/screenshots
-defaults write com.apple.screencapture location -string "${HOME}/Desktop/screenshots"
+# mkdir ${HOME}/Desktop/screenshots
+# defaults write com.apple.screencapture location -string "${HOME}/Desktop/screenshots"
+#xxx
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 #defaults write com.apple.screencapture type -string "png"
@@ -258,7 +259,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
-#defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -351,34 +352,34 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
-# Enable highlight hover effect for the grid view of a stack (Dock)
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
+# # Enable highlight hover effect for the grid view of a stack (Dock)
+# defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
-# Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+# # Set the icon size of Dock items to 36 pixels
+# # defaults write com.apple.dock tilesize -int 36
 
-# Change minimize/maximize window effect
-defaults write com.apple.dock mineffect -string "scale"
+# # Change minimize/maximize window effect
+# defaults write com.apple.dock mineffect -string "scale"
 
-# Minimize windows into their application’s icon
-#defaults write com.apple.dock minimize-to-application -bool true
+# # Minimize windows into their application’s icon
+# #defaults write com.apple.dock minimize-to-application -bool true
 
-# Enable spring loading for all Dock items
-defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+# # Enable spring loading for all Dock items
+# defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
-# Show indicator lights for open applications in the Dock
-defaults write com.apple.dock show-process-indicators -bool true
+# # Show indicator lights for open applications in the Dock
+# defaults write com.apple.dock show-process-indicators -bool true
 
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use
-# the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
+# # Wipe all (default) app icons from the Dock
+# # This is only really useful when setting up a new Mac, or if you don’t use
+# # the Dock to launch apps.
+# #defaults write com.apple.dock persistent-apps -array
 
-# Don’t animate opening applications from the Dock
-#defaults write com.apple.dock launchanim -bool false
+# # Don’t animate opening applications from the Dock
+# #defaults write com.apple.dock launchanim -bool false
 
-# Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0.1
+# # Speed up Mission Control animations
+# defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Don’t group windows by application in Mission Control
 # (i.e. use the old Exposé behavior instead)
@@ -387,11 +388,11 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 # Disable Dashboard
 #defaults write com.apple.dashboard mcx-disabled -bool true
 
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
+# # Don’t show Dashboard as a Space
+# defaults write com.apple.dock dashboard-in-overlay -bool true
 
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+# # Don’t automatically rearrange Spaces based on most recent use
+# defaults write com.apple.dock mru-spaces -bool false
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
@@ -570,77 +571,77 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Use a modified version of the Solarized Dark theme by default in Terminal.app
-osascript <<EOD
+# # Use a modified version of the Solarized Dark theme by default in Terminal.app
+# osascript <<EOD
 
-tell application "Terminal"
+# tell application "Terminal"
 
-    local allOpenedWindows
-    local initialOpenedWindows
-    local windowID
-    set themeName to "Solarized Dark xterm-256color"
+#     local allOpenedWindows
+#     local initialOpenedWindows
+#     local windowID
+#     set themeName to "Solarized Dark xterm-256color"
 
-    (* Store the IDs of all the open terminal windows. *)
-    set initialOpenedWindows to id of every window
+#     (* Store the IDs of all the open terminal windows. *)
+#     set initialOpenedWindows to id of every window
 
-    (* Open the custom theme so that it gets added to the list
-       of available terminal themes (note: this will open two
-       additional terminal windows). *)
-    do shell script "open '$HOME/init/" & themeName & ".terminal'"
+#     (* Open the custom theme so that it gets added to the list
+#        of available terminal themes (note: this will open two
+#        additional terminal windows). *)
+#     do shell script "open '$HOME/init/" & themeName & ".terminal'"
 
-    (* Wait a little bit to ensure that the custom theme is added. *)
-    delay 1
+#     (* Wait a little bit to ensure that the custom theme is added. *)
+#     delay 1
 
-    (* Set the custom theme as the default terminal theme. *)
-    set default settings to settings set themeName
+#     (* Set the custom theme as the default terminal theme. *)
+#     set default settings to settings set themeName
 
-    (* Get the IDs of all the currently opened terminal windows. *)
-    set allOpenedWindows to id of every window
+#     (* Get the IDs of all the currently opened terminal windows. *)
+#     set allOpenedWindows to id of every window
 
-    repeat with windowID in allOpenedWindows
+#     repeat with windowID in allOpenedWindows
 
-        (* Close the additional windows that were opened in order
-           to add the custom theme to the list of terminal themes. *)
-        if initialOpenedWindows does not contain windowID then
-            close (every window whose id is windowID)
+#         (* Close the additional windows that were opened in order
+#            to add the custom theme to the list of terminal themes. *)
+#         if initialOpenedWindows does not contain windowID then
+#             close (every window whose id is windowID)
 
-        (* Change the theme for the initial opened terminal windows
-           to remove the need to close them in order for the custom
-           theme to be applied. *)
-        else
-            set current settings of tabs of (every window whose id is windowID) to settings set themeName
-        end if
+#         (* Change the theme for the initial opened terminal windows
+#            to remove the need to close them in order for the custom
+#            theme to be applied. *)
+#         else
+#             set current settings of tabs of (every window whose id is windowID) to settings set themeName
+#         end if
 
-    end repeat
+#     end repeat
 
-end tell
+# end tell
 
-EOD
+# EOD
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
 #defaults write com.apple.terminal FocusFollowsMouse -bool true
 #defaults write org.x.X11 wm_ffm -bool true
 
-start_if_needed() {
-  local grep_name="[${1:0:1}]${1:1}"
+# start_if_needed() {
+#   local grep_name="[${1:0:1}]${1:1}"
 
-  if [[ -z $(ps aux | grep -e "${grep_name}") ]]; then
-    if [ -e ~/Applications/$1.app ]; then
-      open ~/Applications/$1.app
-    else
-      if [ -e /Applications/$1.app ]; then
-        open /Applications/$1.app
-      fi
-    fi
-  fi
+#   if [[ -z $(ps aux | grep -e "${grep_name}") ]]; then
+#     if [ -e ~/Applications/$1.app ]; then
+#       open ~/Applications/$1.app
+#     else
+#       if [ -e /Applications/$1.app ]; then
+#         open /Applications/$1.app
+#       fi
+#     fi
+#   fi
 
-  true
-}
+#   true
+# }
 
-# Install the Solarized Dark theme for iTerm
-start_if_needed iTerm
-open "${HOME}/init/Solarized Dark.itermcolors"
+# # Install the Solarized Dark theme for iTerm
+# start_if_needed iTerm
+# open "${HOME}/init/Solarized Dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
@@ -715,7 +716,7 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 # # Disable smart quotes as it’s annoying for messages that contain code
-# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 # # Disable continuous spell checking
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
