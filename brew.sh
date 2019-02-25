@@ -126,6 +126,11 @@ brew install zopfli
 brew install pkg-config libffi
 brew install pandoc
 
+
+# network tools
+brew install ipcalc
+brew cask install zenmap
+
 # Lxml and Libxslt
 brew install libxml2
 brew install libxslt
