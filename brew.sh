@@ -186,6 +186,7 @@ npm install --global alfred-dark-mode
 brew install jq
 brew install youtube-dl
 brew cask install powershell
+brew install terraform-docs
 
 # Install oh-my-zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
